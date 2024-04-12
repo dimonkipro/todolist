@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Liste des todos</h1>
+  <a class="btn btn-primary" routerLink="/todos/ajouter">Ajouter</a>
+  <div>
+    <table class="table table-borderless table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="todos" *ngFor="let todo of todos">
+          <td>{{ todo.content }}</td>
+          <td>{{ todo.date | date}}</td>
+          <td>
+            <a class="btn btn-success m-1" routerLink="/todos/modifier/{{ todo._id }}">Modifier</a>
+            <a href="" class="btn btn-danger m-1" (click)="DeleteTodo(todo._id)">Supprimer</a>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>

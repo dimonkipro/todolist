@@ -1,0 +1,14 @@
+<div class="container rounded-4 my-3" style="width: 50%; border: solid">
+  <div class="text-center p-4">
+    <h1>Modifer todo</h1>
+  </div>
+  <form #editForm="ngForm" (ngSubmit)="EditTodos(editForm)">
+    <input name="content" class="form-control mb-2" type="text" placeholder="Taper votre todo"
+      aria-label="default input example" [ngModel]="todos.content" required>
+    <input name="date" class="form-control" type="date" aria-label="default input example"
+      [ngModel]="todos.date.toString().split('T')[0]" required>
+    <div class="text-end m-2">
+      <button type="submit" class="btn btn-primary">Modifier</button>
+    </div>
+  </form>
+</div>
